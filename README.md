@@ -36,6 +36,6 @@ wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-
 #刷新数据
 yum makecache
 
-## 更新到最新
+#更新到最新
 screen yum update -y
 
