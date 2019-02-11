@@ -1,4 +1,47 @@
-#https://kubernetes.io/docs/setup/cri/
+#refer:https://kubernetes.io/docs/setup/cri/
+
+
+
+
+# Install Docker CE
+## Set up the repository
+### Install required packages.
+    yum install yum-utils device-mapper-persistent-data lvm2
+
+### Add docker repository.
+yum-config-manager \
+    --add-repo \
+    https://download.docker.com/linux/centos/docker-ce.repo
+
+## Install docker ce.
+yum update && yum install docker-ce-18.06.2.ce -y
+
+## Create /etc/docker directory.
+mkdir /etc/docker
+
+# Setup daemon.
+cat > /etc/docker/daemon.json <<EOF
+{
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m"
+  },
+  "storage-driver": "overlay2",
+  "storage-opts": [
+    "overlay2.override_kernel_check=true"
+  ]
+}
+EOF
+
+mkdir -p /etc/systemd/system/docker.service.d
+
+# Restart docker.
+systemctl daemon-reload
+systemctl restart docker
+
+
+# Prerequisites for CRI-O
 modprobe overlay
 modprobe br_netfilter
 
@@ -12,16 +55,24 @@ EOF
 sysctl --system
 
 
+
 # Install prerequisites
 yum-config-manager --add-repo=https://cbs.centos.org/repos/paas7-crio-311-candidate/x86_64/os/
 
 # Install CRI-O
-yum install -y --nogpgcheck cri-o
+yum install --nogpgcheck cri-o -y
+
 
 #Start CRI-O
 systemctl start crio
 
-#install Containerd
+
+
+
+
+
+
+# Prerequisites for Containerd
 modprobe overlay
 modprobe br_netfilter
 
@@ -51,5 +102,4 @@ tar --no-overwrite-dir -C / -xzf cri-containerd-${CONTAINERD_VERSION}.linux-amd6
 
 # Start containerd.
 systemctl start containerd
-
 
