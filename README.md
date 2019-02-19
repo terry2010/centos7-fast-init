@@ -21,7 +21,7 @@ ip addr
 
 #可选项目
 
-yum install -y wget  git vim lrzsz screen
+yum install -y wget  git vim lrzsz screen net-tools telnet
 
 ## 替换yum源为ali源
 
