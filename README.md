@@ -41,3 +41,15 @@ yum makecache
 
 screen yum update -y
 
+------
+> 可选操作：
+
+### 更新时区
+```
+yum install -y ntp
+ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
+echo 'Asia/Shanghai' >/etc/timezone
+ntpdate time.windows.com
+
+```
+
