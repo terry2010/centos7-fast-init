@@ -134,6 +134,13 @@ fc-cache
 ```
 google-chrome-stable --headless --disable-gpu --screenshot --no-sandbox --window-size=800,600 https://www.baidu.com
 ```
-
-
+-------
+个别没有安好情况下访问微博主页的截图会白屏, 这时候可以利用远程调试来查看报错
+```
+google-chrome-stable --headless --disable-gpu --no-sandbox --window-size=800,600 --remote-debugging-address=10.123.123.123  --remote-debugging-port=9222 https://www.weibo.com   
+```
+个别没有安好的情况下访问微博主页会崩溃， 这时候可以dump一下崩溃的log
+```
+google-chrome-stable --headless --disable-gpu --screenshot --no-sandbox --window-size=800,600 --repl --crash-dumps-dir=./tmp    https://www.baidu.com
+```
 
