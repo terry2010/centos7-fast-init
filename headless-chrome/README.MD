@@ -149,7 +149,8 @@ google-chrome-stable --headless --disable-gpu --screenshot --no-sandbox --window
 /bin/google-chrome-stable: symbol lookup error: /bin/google-chrome-stable: undefined symbol: gtk_widget_get_scale_factor
 ```
 优先考虑gtk3 版本过低的问题
-执行下面
+
+执行下面的命令升级一下gtk3
 ```
 yum update gtk3
 ```
