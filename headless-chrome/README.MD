@@ -67,6 +67,8 @@ google-chrome-stable --headless --disable-gpu --screenshot --no-sandbox --window
 ```
 测试截图效果
 
+--------------------
+
 ### 安装中文字体
 
 绝大多数服务器都不会安装中文字体， 所以执行chrome时应该有类似下面的报错
