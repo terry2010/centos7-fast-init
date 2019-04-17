@@ -154,3 +154,18 @@ google-chrome-stable --headless --disable-gpu --screenshot --no-sandbox --window
 yum update gtk3
 ```
 
+
+------
+>参考文档
+
+
+https://developers.google.com/web/tools/chrome-devtools/remote-debugging/webviews
+
+
+https://chromium.googlesource.com/chromium/src/+/lkgr/headless/README.md
+
+https://developers.google.com/web/updates/2017/04/headless-chrome
+
+
+>Spacial thanks
+https://intoli.com/blog/installing-google-chrome-on-centos/
