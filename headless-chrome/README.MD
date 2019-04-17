@@ -143,4 +143,14 @@ google-chrome-stable --headless --disable-gpu --no-sandbox --window-size=800,600
 ```
 google-chrome-stable --headless --disable-gpu --screenshot --no-sandbox --window-size=800,600 --repl --crash-dumps-dir=./tmp    https://www.baidu.com
 ```
+个别老旧机器启动会报错
+```
+[root@localhost headless-chrome]# google-chrome-stable --headless --disable-gpu --screenshot --no-sandbox --window-size=800,600 https://www.baidu.com
+/bin/google-chrome-stable: symbol lookup error: /bin/google-chrome-stable: undefined symbol: gtk_widget_get_scale_factor
+```
+优先考虑gtk3 版本过低的问题
+执行下面
+```
+yum update gtk3
+```
 
