@@ -158,6 +158,8 @@ yum update gtk3
 chrome 调试地址：
 
 chrome://inspect/#devices
+
+
 ------
 >参考文档
 
