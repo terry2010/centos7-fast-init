@@ -171,6 +171,7 @@ https://chromium.googlesource.com/chromium/src/+/lkgr/headless/README.md
 
 https://developers.google.com/web/updates/2017/04/headless-chrome
 
+chrome协议     https://chromedevtools.github.io/devtools-protocol/
 
 >Spacial thanks
 https://intoli.com/blog/installing-google-chrome-on-centos/
