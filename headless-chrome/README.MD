@@ -135,6 +135,16 @@ fc-cache
 google-chrome-stable --headless --disable-gpu --screenshot --no-sandbox --window-size=800,600 https://www.baidu.com
 ```
 -------
+
+chromedp 在 2019-04左右出现对最新版本chrome无法调用的情况， 报错：
+```
+ malformed ws or wss URL
+ ```
+ 需要到下面的网址找到老版本的chrome，重新安装一次
+
+http://dist.control.lth.se/public/CentOS-7/x86_64/google.x86_64/Packages/
+
+
 个别没有安好情况下访问微博主页的截图会白屏, 这时候可以利用远程调试来查看报错
 ```
 google-chrome-stable --headless --disable-gpu --no-sandbox --window-size=800,600 --remote-debugging-address=10.123.123.123  --remote-debugging-port=9222 https://www.weibo.com   
