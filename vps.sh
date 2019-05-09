@@ -16,5 +16,5 @@ mkdir -p /data1/logs/
 mkdir -p /data1/conf/nginx/
 mkdir -p /data1/conf/mysql/
 mkdir -p /data1/data/mysql/
-docker run --name my-nginx -d -p 80:80 --net host -v /data1/htdocs:/usr/share/nginx/html:ro -v /data1/conf/nginx:/etc/nginx:ro nginx
+docker run --name my-nginx -d -p 80:80 -v /data1/htdocs:/usr/share/nginx/html:ro -v /data1/conf/nginx:/etc/nginx:ro nginx
 
