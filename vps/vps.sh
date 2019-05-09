@@ -12,7 +12,7 @@ wget -N --no-check-certificate  https://github.com/terry2010/centos7-fast-init/r
 
 
 
-mv data1 /data1
+mv ./data1/* /data1/
 
 
 docker run --name my-nginx -d -p 80:80 -v /data1/htdocs:/usr/share/nginx/html:ro -v /data1/conf/nginx:/etc/nginx:ro nginx
