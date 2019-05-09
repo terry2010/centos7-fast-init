@@ -33,3 +33,9 @@ docker run -it --rm -p=0.0.0.0:9222:9222 --name=chrome-headless -v /tmp/chromeda
 wget --no-check-certificate -O shadowsocks-libev.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev.sh
 chmod +x shadowsocks-libev.sh
 ./shadowsocks-libev.sh 2>&1 | tee shadowsocks-libev.log
+
+
+https://hub.docker.com/r/teddysun/shadowsocks-libev
+docker run -d -p 9000:9000 -p 9000:9000/udp --name ss-libev -v /etc/shadowsocks-libev:/etc/shadowsocks-libev teddysun/shadowsocks-libev
+
+/etc/shadowsocks-libev/config.json
