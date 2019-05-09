@@ -12,12 +12,7 @@ wget -N --no-check-certificate  https://github.com/terry2010/centos7-fast-init/r
 
 
 
-mkdir -p /data1/htdocs/
-mkdir -p /data1/logs/
-mkdir -p /data1/conf/nginx/
-mkdir -p /data1/conf/mysql/
-mkdir -p /data1/data/mysql/
-
+mv data1 /data1
 
 
 docker run --name my-nginx -d -p 80:80 -v /data1/htdocs:/usr/share/nginx/html:ro -v /data1/conf/nginx:/etc/nginx:ro nginx
@@ -35,7 +30,6 @@ chmod +x shadowsocks-libev.sh
 ./shadowsocks-libev.sh 2>&1 | tee shadowsocks-libev.log
 
 
-https://hub.docker.com/r/teddysun/shadowsocks-libev
 docker run -d -p 9000:9000 -p 9000:9000/udp --name ss-libev -v /data1/conf/ss:/etc/shadowsocks-libev teddysun/shadowsocks-libev
 
 
