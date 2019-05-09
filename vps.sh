@@ -26,3 +26,5 @@ docker run --name my-mysql -d -p 3306:3306  -e MYSQL_ROOT_PASSWORD=weibo.com mys
 
 #进入docker执行命令
 #docker exec -i -t  mynginx /bin/bash
+
+docker run -it --rm -p=0.0.0.0:9222:9222 --name=chrome-headless -v /tmp/chromedata/:/data alpeware/chrome-headless-trunk
