@@ -36,6 +36,6 @@ chmod +x shadowsocks-libev.sh
 
 
 https://hub.docker.com/r/teddysun/shadowsocks-libev
-docker run -d -p 9000:9000 -p 9000:9000/udp --name ss-libev -v /etc/shadowsocks-libev:/etc/shadowsocks-libev teddysun/shadowsocks-libev
+docker run -d -p 9000:9000 -p 9000:9000/udp --name ss-libev -v /data1/conf/ss:/etc/shadowsocks-libev teddysun/shadowsocks-libev
 
-/etc/shadowsocks-libev/config.json
+
