@@ -15,7 +15,7 @@ wget -N --no-check-certificate  https://github.com/terry2010/centos7-fast-init/r
 mv ./data1/* /data1/
 
 
-docker run --name my-nginx -d -p 80:80 -v /data1/htdocs:/usr/share/nginx/html:ro -v /data1/conf/nginx:/etc/nginx:ro nginx
+docker run --name my-nginx -d -p 80:80 -v /data1/conf/nginx:/etc/nginx:ro -v /data1/htdocs:/htdocs:ro  -v /data1/log/nginx:/logs nginx
 
 docker run --name my-php -d -p 9020:9020 php:7.3-fpm
 docker run --name my-mysql -d -p 3306:3306  -e MYSQL_ROOT_PASSWORD=weibo.com mysql:5.7 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
