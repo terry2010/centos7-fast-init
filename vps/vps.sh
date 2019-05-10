@@ -57,7 +57,7 @@ docker exec -t my-php bash -c "docker-php-source extract \
 docker restart my-php
 
 
-docker run --name my-mysql -d -p 3306:3306  -e MYSQL_ROOT_PASSWORD=weibo.com mysql:5.7 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+docker run --name my-mysql -d -p 3306:3306 -v /data1/data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=weibo.com mysql:5.7 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 docker run --name my-redis -d -p 6379:6379 -v /data1/data/redis:/data -v /data1/conf/redis.conf:/usr/local/etc/redis/redis.conf redis redis-server --appendonly yes 
 #进入docker执行命令
 #docker exec -i -t  mynginx /bin/bash
