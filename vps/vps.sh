@@ -18,6 +18,18 @@ mv ./data1/* /data1/
 docker run --name my-nginx -d --network=host   -v /data1/conf/nginx:/etc/nginx:ro -v /data1/htdocs:/htdocs:ro  -v /data1/log/nginx:/logs nginx
 
 docker run --name my-php -d --network=host -v /data1/htdocs:/htdocs:ro php:7.3-fpm
+#移动配置文件
+
+docker exec -t my-php bash -c "mv /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini"
+#安装redis
+docker exec -t my-php bash -c "yes '' |pecl install redis"
+docker exec -t my-php bash -c "echo \"extension=redis.so\" >> /usr/local/etc/php/php.ini"
+docker restart my-php
+#docker exec -t my-php bash -c "yes '' |pecl install swoole"
+#docker exec -t my-php bash -c "echo \"extension=swoole.so\" >> /usr/local/etc/php/php.ini"
+#docker restart my-php
+
+
 docker run --name my-mysql -d -p 3306:3306  -e MYSQL_ROOT_PASSWORD=weibo.com mysql:5.7 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 docker run --name my-redis -d -p 6379:6379 -v /data1/data/redis:/data -v /data1/conf/redis.conf:/usr/local/etc/redis/redis.conf redis redis-server --appendonly yes 
 #进入docker执行命令
