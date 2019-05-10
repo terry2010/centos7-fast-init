@@ -25,6 +25,15 @@ docker run --name my-redis -d -p 6379:6379 -v /data1/data/redis:/data -v /data1/
 #docker安装常用命令
 #apt-get update && apt-get install procps vim net-tools
 
+#打开防火墙端口
+firewall-cmd --zone=public --add-port=80/tcp --permanent  
+firewall-cmd --zone=public --add-port=443/tcp --permanent  
+firewall-cmd --reload
+
+
+
+
+
 docker run -it --rm -p=0.0.0.0:9222:9222 --name=chrome-headless -v /tmp/chromedata/:/data alpeware/chrome-headless-trunk
 
 wget --no-check-certificate -O shadowsocks-libev.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev.sh
