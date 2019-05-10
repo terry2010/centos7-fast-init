@@ -22,6 +22,8 @@ docker run --name my-mysql -d -p 3306:3306  -e MYSQL_ROOT_PASSWORD=weibo.com mys
 docker run --name my-redis -d -p 6379:6379 -v /data1/data/redis:/data -v /data1/conf/redis.conf:/usr/local/etc/redis/redis.conf redis redis-server --appendonly yes 
 #进入docker执行命令
 #docker exec -i -t  mynginx /bin/bash
+#docker安装常用命令
+#apt-get update && apt-get install procps vim net-tools
 
 docker run -it --rm -p=0.0.0.0:9222:9222 --name=chrome-headless -v /tmp/chromedata/:/data alpeware/chrome-headless-trunk
 
