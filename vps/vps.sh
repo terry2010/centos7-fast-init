@@ -29,7 +29,9 @@ wget --no-check-certificate -O shadowsocks-libev.sh https://raw.githubuserconten
 chmod +x shadowsocks-libev.sh
 ./shadowsocks-libev.sh 2>&1 | tee shadowsocks-libev.log
 
+#libev版本需要内核版本>3.7 ,否则会出 ERROR: failed to set TCP_FASTOPEN_CONNECT
+#docker run -d -p 9000:9000 -p 9000:9000/udp --name ss-libev -v /data1/conf/ss:/etc/shadowsocks-libev teddysun/shadowsocks-libev
+docker run -d -p 9000:9000 -p 9000:9000/udp --name ss-go -v /data1/conf/ss:/etc/shadowsocks-go teddysun/shadowsocks-go
 
-docker run -d -p 9000:9000 -p 9000:9000/udp --name ss-libev -v /data1/conf/ss:/etc/shadowsocks-libev teddysun/shadowsocks-libev
 
 
