@@ -5,10 +5,10 @@ cat /proc/cpuinfo
 yum install -y wget git vim lrzsz screen net-tools telnet
 yum update -y
 
+wget -N --no-check-certificate  https://github.com/terry2010/centos7-fast-init/raw/master/docker/install.sh && bash install.sh
 
 wget -N --no-check-certificate https://github.com/91yun/serverspeeder/raw/master/serverspeeder.sh && bash serverspeeder.sh
 
-wget -N --no-check-certificate  https://github.com/terry2010/centos7-fast-init/raw/master/docker/install.sh && bash install.sh
 
  
 
