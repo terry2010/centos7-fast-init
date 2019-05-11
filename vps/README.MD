@@ -22,9 +22,13 @@ docker run -it --rm -p=0.0.0.0:9222:9222 --name=chrome-headless -v /data1/data/c
 ```
 
 4. 常用docker命令
+
 #重启nginx
+
 docker restart my-nginx 
+
 #进入docker执行命令
+
 docker exec -it  my-php /bin/bash
 
  
