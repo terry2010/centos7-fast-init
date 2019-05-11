@@ -14,11 +14,11 @@ wget -N --no-check-certificate https://github.com/91yun/serverspeeder/raw/master
  
  
 
-docker run -it --rm -p=0.0.0.0:9222:9222 --name=chrome-headless -v /tmp/chromedata/:/data alpeware/chrome-headless-trunk
+#docker run -it --rm -p=0.0.0.0:9222:9222 --name=chrome-headless -v /tmp/chromedata/:/data alpeware/chrome-headless-trunk
 
-wget --no-check-certificate -O shadowsocks-libev.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev.sh
-chmod +x shadowsocks-libev.sh
-./shadowsocks-libev.sh 2>&1 | tee shadowsocks-libev.log
+#wget --no-check-certificate -O shadowsocks-libev.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev.sh
+#chmod +x shadowsocks-libev.sh
+#./shadowsocks-libev.sh 2>&1 | tee shadowsocks-libev.log
 
 #libev版本需要内核版本>3.7 ,否则会出 ERROR: failed to set TCP_FASTOPEN_CONNECT
 #docker run -d -p 9000:9000 -p 9000:9000/udp --name ss-libev -v /data1/conf/ss:/etc/shadowsocks-libev teddysun/shadowsocks-libev
