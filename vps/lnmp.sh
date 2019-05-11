@@ -28,9 +28,10 @@ docker exec -t my-php bash -c "apt-get install -y \
         libpng-dev \
     && docker-php-ext-install -j$(nproc) iconv \
     && docker-php-ext-configure gd --with-freetype-dir=/usr/include/ --with-jpeg-dir=/usr/include/ \
-    && docker-php-ext-install -j$(nproc) gd"
+    && docker-php-ext-install -j$(nproc) gd \
+    && docker-php-ext-install pdo_mysql"
 #安装swoole
-#docker exec -t my-php bash -c "yes '' |pecl install swoole"
+#docker exec -t my-php bash -c "yes '' |pecl install swoole pdo_mysql"
 #docker exec -t my-php bash -c "echo \"extension=swoole.so\" >> /usr/local/etc/php/php.ini"
 #docker restart my-php
 #安装pcntl
