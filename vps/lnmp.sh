@@ -55,6 +55,9 @@ docker exec -t my-php bash -c "docker-php-source extract \
     
 #安装完扩展重启镜像
 docker restart my-php
+#解决php无法写文件的问题
+#只有当php容器挂载目录为可写的时候才需要这么做
+#docker exec -t my-php bash -c "chown -R www-data:www-data /htdocs/"
 
 
 docker run --name my-mysql -d --network=host -v /data1/data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=weibo.com mysql:5.7 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
