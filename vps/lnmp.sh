@@ -19,6 +19,10 @@ docker exec -t my-php bash -c "mv /usr/local/etc/php/php.ini-production /usr/loc
 docker exec -t my-php bash -c "yes '' |pecl install redis"
 docker exec -t my-php bash -c "echo \"extension=redis.so\" >> /usr/local/etc/php/php.ini"
 
+#安装yaf
+#docker exec -t my-php bash -c "yes '' |pecl install yaf"
+#docker exec -t my-php bash -c "echo \"extension=yaf.so\" >> /usr/local/etc/php/php.ini"
+
 #安装gd
 docker exec -t my-php bash -c "apt-get install -y \
         libfreetype6-dev \
