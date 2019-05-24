@@ -9,7 +9,7 @@
 ```
 yum install yum-utils
 
-wget https://github.com/terry2010/centos7-trunk/raw/master/google-chrome-stable-73.0.3683.103-1.x86_64.rpm
+wget --no-check-certificate https://github.com/terry2010/centos7-trunk/raw/master/google-chrome-stable-73.0.3683.103-1.x86_64.rpm
 
 rpm -i google-chrome-stable-73.0.3683.103-1.x86_64.rpm 
 ```
