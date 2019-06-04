@@ -25,7 +25,7 @@ docker exec -t my-php bash -c "echo \"extension=redis.so\" >> /usr/local/etc/php
 
 #安装gd
 docker exec -t my-php bash -c "apt-get update -y \
-        apt-get install -y \
+        &&apt-get install -y \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
         libpng-dev \
