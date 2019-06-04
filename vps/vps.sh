@@ -20,7 +20,13 @@ wget -N --no-check-certificate  https://github.com/terry2010/centos7-fast-init/r
  #好像不起作用？
  echo "bash /appex/bin/lotServer.sh start" >> /etc/rc.local
  
- 
+#安装dropbox
+#docker run -d --restart=always --name=dropbox -v /data1:/dbox/Dropbox/data1 janeczku/dropbox
+docker run -d  --name=dropbox -v /data1:/dbox/Dropbox/data1 janeczku/dropbox
+
+#查看dropbox 授权链接
+docker logs -f dropbox 
+docker exec -it dropbox /bin/bash
 
 #docker run -it --rm -p=0.0.0.0:9222:9222 --name=chrome-headless -v /tmp/chromedata/:/data alpeware/chrome-headless-trunk
 
