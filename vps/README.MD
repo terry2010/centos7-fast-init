@@ -31,4 +31,20 @@ docker restart my-nginx
 
 docker exec -it  my-php /bin/bash
 
+5. 其他
+
+ ```
+  yum makecache
+Loaded plugins: fastestmirror, langpacks
+base                                                                                                                                                                                 | 3.6 kB  00:00:00     
+
+
+ One of the configured repositories failed (Unknown),
+ ```
+ 
+ 删除默认库 
+ rm -f mv /etc/yum.repos.d/epel.repo
+ 换ali源
+ wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+ yum makecache
  
