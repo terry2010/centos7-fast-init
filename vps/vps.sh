@@ -1,6 +1,7 @@
 #草稿，无法使用
 
 cat /proc/cpuinfo
+cat /etc/redhat-release 
 
 yum install -y wget git vim lrzsz screen net-tools telnet
 yum update -y
