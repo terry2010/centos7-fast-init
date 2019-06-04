@@ -3,6 +3,9 @@
 cat /proc/cpuinfo
 cat /etc/redhat-release 
 
+#禁止升级内核 serverspeed 只支持老版本内核
+echo "exclude=kernel*" >> /etc/yum.conf
+
 yum install -y wget git vim lrzsz screen net-tools telnet
 yum update -y
 
