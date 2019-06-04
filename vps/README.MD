@@ -45,11 +45,17 @@ base       | 3.6 kB  00:00:00
  ```
  
  删除默认库 
+ 
  rm -f mv /etc/yum.repos.d/epel.repo
+ 
  换ali源
+ 
  wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+ 
  yum makecache
  
  5.2 更新dns解析
+ 
  vim /etc/resolv.conf 
+ 
  systemctl restart network
