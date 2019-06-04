@@ -3,20 +3,22 @@
 cat /proc/cpuinfo
 cat /etc/redhat-release 
 
-#禁止升级内核 serverspeed 只支持老版本内核
-echo "exclude=kernel*" >> /etc/yum.conf
+#禁止升级内核 serverspeed 只支持老版本内核 , lotServer 支持7.6/3.10.0-957
+#echo "exclude=kernel*" >> /etc/yum.conf
 
-yum install -y wget git vim lrzsz screen net-tools telnet
+yum install -y wget git vim lrzsz screen net-tools telnet iftop
 yum update -y
 
 wget -N --no-check-certificate  https://github.com/terry2010/centos7-fast-init/raw/master/docker/install.sh && bash install.sh
  
-wget -N --no-check-certificate https://github.com/91yun/serverspeeder/raw/master/serverspeeder.sh && bash -c "yes '1'|sh serverspeeder.sh"
-#centos 7.2 强安
-#wget -N --no-check-certificate https://github.com/91yun/serverspeeder/raw/master/serverspeeder-v.sh && bash serverspeeder-v.sh CentOS 7.2 3.10.0-327.el7.x86_64 x64 3.11.20.5 serverspeeder_72327
- #查看状态
- /serverspeeder/bin/serverSpeeder.sh status
+#安装 lotServer （锐速）
+ bash <(wget --no-check-certificate -qO- https://github.com/MoeClub/lotServer/raw/master/Install.sh) install 3.10.0-957.el7.x86_64
  
+ #查看状态
+ bash /appex/bin/lotServer.sh status
+ #加入系统自启动
+ #好像不起作用？
+ echo "bash /appex/bin/lotServer.sh start" >> /etc/rc.local
  
  
 
