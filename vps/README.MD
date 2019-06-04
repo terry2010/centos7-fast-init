@@ -33,10 +33,12 @@ docker exec -it  my-php /bin/bash
 
 5. 其他
 
+5.1 yum源有问题
+
  ```
   yum makecache
 Loaded plugins: fastestmirror, langpacks
-base                                                                                                                                                                                 | 3.6 kB  00:00:00     
+base       | 3.6 kB  00:00:00     
 
 
  One of the configured repositories failed (Unknown),
@@ -48,3 +50,6 @@ base                                                                            
  wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
  yum makecache
  
+ 5.2 更新dns解析
+ vim /etc/resolv.conf 
+ systemctl restart network
