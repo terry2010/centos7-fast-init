@@ -34,6 +34,7 @@ mv centos7-fast-init/data1 /data1
 
 
 #docker run -it --rm -p=0.0.0.0:9222:9222 --name=chrome-headless -v /tmp/chromedata/:/data alpeware/chrome-headless-trunk
+#docker run -it --rm -p=0.0.0.0:9222:9222 --name=chrome-headless -v /tmp/chromedata/:/data terry2010/chrome-headless-chinese
 
 #wget --no-check-certificate -O shadowsocks-libev.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev.sh
 #chmod +x shadowsocks-libev.sh
