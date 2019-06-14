@@ -13,7 +13,7 @@
 
 vps.sh  初始化环境
 
-lnmp.sh 安装lnmp
+lnmp.sh 安装lnmp ,如果只是干净的生产机，可以省略执行vps.sh
 
 
 3. 无头chrome的docker启动
