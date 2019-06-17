@@ -52,6 +52,10 @@ base       | 3.6 kB  00:00:00
  
  wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
  
+ 下载fedora的epel仓库
+ 
+ yum install epel-release
+ 
  yum makecache
  
  5.2 更新dns解析
