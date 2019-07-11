@@ -18,7 +18,8 @@ lnmp.sh 安装lnmp ,如果只是干净的生产机，可以省略执行vps.sh
 
 3. 无头chrome的docker启动
 ```
-docker run -it --rm -p=0.0.0.0:9222:9222 --name=chrome-headless -v /data1/data/chrome/:/data alpeware/chrome-headless-trunk
+docker run -it --rm -p=0.0.0.0:9222:9222 --name=chrome-headless -v /data1/data/chrome/:/data terry2010/chrome-headless-chinese
+
 ```
 
 4. 常用docker命令
