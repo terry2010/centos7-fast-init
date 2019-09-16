@@ -12,13 +12,14 @@ yum update -y
 wget -N --no-check-certificate  https://github.com/terry2010/centos7-fast-init/raw/master/docker/install.sh && bash install.sh
  
 #安装 lotServer （锐速）
- bash <(wget --no-check-certificate -qO- https://github.com/MoeClub/lotServer/raw/master/Install.sh) install 3.10.0-957.el7.x86_64
+wget --no-check-certificate   https://github.com/MoeClub/lotServer/raw/master/Install.sh
+bash  Install.sh install  3.10.0-957.el7.x86_64
  
  #查看状态
  bash /appex/bin/lotServer.sh status
  #加入系统自启动
  #好像不起作用？
- echo "bash /appex/bin/lotServer.sh start" >> /etc/rc.local
+ echo "sleep 1 && bash /appex/bin/lotServer.sh start" >> /etc/rc.local
  
 #安装dropbox
 #docker run -d --restart=always --name=dropbox -v /data1:/dbox/Dropbox/data1 janeczku/dropbox
@@ -30,7 +31,7 @@ docker exec -it dropbox /bin/bash
 
 #如果没有在dropbox 备份过数据， 这一步替换为
 git clone https://github.com/terry2010/centos7-fast-init.git
-mv centos7-fast-init/data1 /data1
+mv centos7-fast-init/vps/data1 /data1
 
 
 #docker run -it --rm -p=0.0.0.0:9222:9222 --name=chrome-headless -v /tmp/chromedata/:/data alpeware/chrome-headless-trunk
@@ -43,8 +44,12 @@ mv centos7-fast-init/data1 /data1
 
 mv ./data1 /
 #libev版本需要内核版本>3.7 ,否则会出 ERROR: failed to set TCP_FASTOPEN_CONNECT
+
 #docker run -d -p 9000:9000 -p 9000:9000/udp --name ss-libev -v /data1/conf/ss:/etc/shadowsocks-libev teddysun/shadowsocks-libev
 docker run -d -p 9999:9999 -p 9999:9999/udp --restart=always --name ss-go -v /data1/conf/ss:/etc/shadowsocks-go teddysun/shadowsocks-go
 
-
+#打开防火墙端口
+firewall-cmd --zone=public --add-port=9999/tcp --permanent  
+firewall-cmd --zone=public --add-port=9999/udp --permanent  
+firewall-cmd --reload
 
