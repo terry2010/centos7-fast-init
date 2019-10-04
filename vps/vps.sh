@@ -12,6 +12,7 @@ yum update -y
 wget -N --no-check-certificate  https://github.com/terry2010/centos7-fast-init/raw/master/docker/install.sh && bash install.sh
  
 #安装 lotServer （锐速）
+uname -sr
 wget --no-check-certificate   https://github.com/MoeClub/lotServer/raw/master/Install.sh
 bash  Install.sh install  3.10.0-957.el7.x86_64
  
