@@ -4,7 +4,7 @@ cat /proc/cpuinfo
 cat /etc/redhat-release 
 
 #禁止升级内核 serverspeed 只支持老版本内核 , lotServer 支持7.6/3.10.0-957
-#echo "exclude=kernel*" >> /etc/yum.conf
+echo "exclude=kernel*" >> /etc/yum.conf
 
 yum install -y wget git vim lrzsz screen net-tools telnet iftop
 yum update -y
