@@ -35,7 +35,7 @@ wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-
 ```
 #下载fedora的epel仓库
 ```
-yum install epel-release
+yum install -y epel-release
 ```
 #刷新数据
 ```
