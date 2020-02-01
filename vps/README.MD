@@ -1,5 +1,7 @@
 # 安装注意
 
+>>本脚本批量部署环境为 centos 7.6 
+
 1. 安装前
 
 编辑lnmp.sh ，修改 数据库密码 MYSQL_ROOT_PASSWORD=weibo.com  为真实密码
