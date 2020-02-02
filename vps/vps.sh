@@ -24,11 +24,11 @@ bash  Install.sh install  3.10.0-957.el7.x86_64
  
 #安装dropbox
 #docker run -d --restart=always --name=dropbox -v /data1:/dbox/Dropbox/data1 janeczku/dropbox
-docker run -d  --name=dropbox -v /data1:/dbox/Dropbox/data1 janeczku/dropbox
+#docker run -d  --name=dropbox -v /data1:/dbox/Dropbox/data1 janeczku/dropbox
 
 #查看dropbox 授权链接
-docker logs -f dropbox 
-docker exec -it dropbox /bin/bash
+#docker logs -f dropbox 
+#docker exec -it dropbox /bin/bash
 
 #如果没有在dropbox 备份过数据， 这一步替换为
 git clone https://github.com/terry2010/centos7-fast-init.git
