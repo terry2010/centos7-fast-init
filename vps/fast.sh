@@ -4,8 +4,12 @@ cat /etc/redhat-release
 
 echo "exclude=kernel*" >> /etc/yum.conf
 
+yum update -y
 yum install -y wget git vim lrzsz screen net-tools telnet iftop
-#yum update -y
+yum install -y epel-release 
+git clone https://github.com/terry2010/centos7-fast-init.git 
+cd centos7-fast-init/vps/
+
 
 wget -N --no-check-certificate  https://github.com/terry2010/centos7-fast-init/raw/master/docker/install.sh && bash install.sh
  
