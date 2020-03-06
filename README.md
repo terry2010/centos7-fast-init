@@ -1,6 +1,13 @@
 # centos7-fast-init
 最小化安装centos7 之后， 快速初始化环境， 使新机器最短时间可以上线作为开发机/生产机使用
 
+## 一键安装
+
+yum install -y wget git vim lrzsz screen net-tools telnet iftop &&\
+wget "https://raw.githubusercontent.com/terry2010/centos7-fast-init/master/vps/fast.sh" &&\
+sh fash.sh
+
+
 
 ## 新上架机器后， 启用网卡
 ```
