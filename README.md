@@ -16,10 +16,11 @@ yum install -y wget git vim lrzsz screen net-tools telnet iftop &&\
 git clone https://github.com/terry2010/centos7-fast-init.git &&\
 
 scp  root@xxxxxxxxxx:/data1.tar.gz /data1.tar.gz
-cd /
-tar -xvzf data1.tar.gz
-cd /root/centos7-fast-init/vps/ 
-screen sh vps.sh
+cd /  &&\
+tar -xvzf data1.tar.gz &&\
+cd /root/centos7-fast-init/vps/ &&\
+screen sh vps.sh &&\
+screen sh lnmp.sh 
 
 ```
 
