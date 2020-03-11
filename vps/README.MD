@@ -72,6 +72,8 @@ base       | 3.6 kB  00:00:00
  
  安装jenkins
  ```
+  yum install -y java-1.8.0-openjdk java-1.8.0-openjdk-devel
+  
   docker run -d --net=host --name jenkins_01 -v /home/jenkins_01:/home/jenkins_01 jenkins/jenkins:lts 
   
   docker exec -it jenkins_01 cat /var/jenkins_home/secrets/initialAdminPassword    
