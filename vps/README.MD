@@ -66,3 +66,14 @@ base       | 3.6 kB  00:00:00
  vim /etc/resolv.conf 
  
  systemctl restart network
+ 
+ 
+ 
+ 
+ 安装jenkins
+ ```
+  docker run -d --net=host --name jenkins_01 -v /home/jenkins_01:/home/jenkins_01 jenkins/jenkins:lts 
+  
+  docker exec -it jenkins_01 cat /var/jenkins_home/secrets/initialAdminPassword    
+  ```
+ 
