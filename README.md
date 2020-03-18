@@ -6,7 +6,7 @@
 ```
 yum install -y wget git vim lrzsz screen net-tools telnet iftop &&\
 wget "https://raw.githubusercontent.com/terry2010/centos7-fast-init/master/vps/fast.sh" &&\
-screen sh fash.sh
+screen sh fast.sh
 ```
 
 ## 快速上线
