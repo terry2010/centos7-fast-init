@@ -16,7 +16,8 @@ screen sh fast.sh
 #### 需要先修改 vps.sh  
 ```
 yum install -y wget git vim lrzsz screen net-tools telnet iftop &&\
-git clone https://github.com/terry2010/centos7-fast-init.git &&\
+git clone https://github.com/terry2010/centos7-fast-init.git  
+
 
 scp  root@xxxxxxxxxxxxxxxxxx.com:/data1.tar.gz /data1.tar.gz 
 
