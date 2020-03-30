@@ -63,7 +63,7 @@ docker restart my-php
 #docker exec -t my-php bash -c "chown -R www-data:www-data /htdocs/"
 
 
-docker run --name my-mysql -d --network=host -v /data1/data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=weibo.com mysql:5.7 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+#docker run --name my-mysql -d --network=host -v /data1/data/mysql:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=weibo.com mysql:5.7 --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
 #docker run --name my-redis -d -p 6379:6379 -v /data1/data/redis:/data -v /data1/conf/redis:/usr/local/etc/redis redis redis-server --appendonly yes 
 #进入docker执行命令
 #docker exec -i -t  mynginx /bin/bash
