@@ -30,10 +30,10 @@ cd /root/centos7-fast-init/vps/
 
 ####需要先修改 vps.sh 
 
-sh vps.sh
+screen sh vps.sh
 
 
-sh lnmp.sh 
+screen sh lnmp.sh 
 
 
 
