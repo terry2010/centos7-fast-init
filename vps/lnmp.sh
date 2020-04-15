@@ -12,9 +12,9 @@ wget -N --no-check-certificate  https://github.com/terry2010/centos7-fast-init/r
 mv ./data1 /
 
 
-docker run --name my-nginx -d --network=host   -v /data1/conf/nginx:/etc/nginx:ro -v /data1/htdocs:/htdocs:ro  -v /data1/log/nginx:/logs nginx
+docker run --name my-nginx -d --restart=always --network=host   -v /data1/conf/nginx:/etc/nginx:ro -v /data1/htdocs:/htdocs:ro  -v /data1/log/nginx:/logs nginx
 
-docker run --name my-php -d --network=host -v /data1/htdocs:/htdocs:ro php:7.3-fpm
+docker run --name my-php -d --restart=always --network=host -v /data1/htdocs:/htdocs:ro php:7.3-fpm
 
 #移动配置文件
 docker exec -t my-php bash -c "mv /usr/local/etc/php/php.ini-production /usr/local/etc/php/php.ini"
