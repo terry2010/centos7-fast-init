@@ -19,7 +19,7 @@ ip a
 yum install -y wget git vim lrzsz screen net-tools telnet iftop &&\
 git clone https://github.com/terry2010/centos7-fast-init.git &&\
 screen -S install
-scp  root@xxxxxxxxxxxxxxx.com:/data1.tar.gz /data1.tar.gz 
+scp  root@xxxxxxxxxxxxxxxxxxxxxxxxx.com:/data1.tar.gz /data1.tar.gz 
 
 
 
@@ -29,6 +29,7 @@ tar -xzf data1.tar.gz &&\
 cd /root/centos7-fast-init/vps/ 
 
 ####需要先修改 vps.sh 
+vim vps.sh
 
 screen sh vps.sh
 
