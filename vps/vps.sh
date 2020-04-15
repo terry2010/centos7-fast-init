@@ -19,8 +19,8 @@ bash  Install.sh install  3.10.0-957.el7.x86_64
  #查看状态
  bash /appex/bin/lotServer.sh status
  #加入系统自启动
- #好像不起作用？
- echo "sleep 1 && bash /appex/bin/lotServer.sh start" >> /etc/rc.local
+ chmod +x /etc/rc.d/rc.local
+ echo "sleep 1 && bash /appex/bin/lotServer.sh start" >> /etc/rc.d/rc.local
  
 #安装dropbox
 #docker run -d --restart=always --name=dropbox -v /data1:/dbox/Dropbox/data1 janeczku/dropbox
